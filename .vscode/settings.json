@@ -15,11 +15,17 @@
   // Display a vertical ruler at column 88 to help maintain PEP 8 style guide recommendations
   "editor.rulers": [88],
   "cSpell.words": [
+    "adminer",
     "anyio",
     "ASGI",
     "charliermarsh",
+    "dotenv",
     "fastapi",
     "idna",
+    "ossp",
+    "PGUSER",
+    "psql",
+    "psycopg",
     "pydantic",
     "sniffio",
     "starlette",
