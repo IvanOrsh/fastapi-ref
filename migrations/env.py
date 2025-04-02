@@ -11,8 +11,13 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# devdb, alchemy.url
-config.set_section_option("devdb", "sqlalchemy.url", os.getenv("DEV_DATABASE_URL"))
+# Set the database URLs based on environment variables or any other source
+url_devdb = os.environ.get("DEV_DATABASE_URL")
+url_testdb = os.environ.get("TEST_DATABASE_URL")
+
+# Modify the database URLs in the Alembic config
+config.set_section_option("devdb", "sqlalchemy.url", url_devdb)
+config.set_section_option("testdb", "sqlalchemy.url", url_testdb)
 
 target_metadata = models.Base.metadata
 
